@@ -67,7 +67,7 @@ public class Coordinate {
 	
 	@Override
 	public int hashCode() {
-		return x + y;
+		return 31*x + 7*y;
 	}
 	
 	public Coordinate dir(String direction) {
