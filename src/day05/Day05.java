@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import util.InputReader;
+import util.Range;
 
 public class Day05 {
 	public static void main(String[] args) {
