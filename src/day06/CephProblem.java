@@ -21,17 +21,14 @@ public class CephProblem extends Problem {
 	}
 	
 	public void add(String line) {
-		int endindex = start + offset -1;
 		if (start+offset > line.length()-1)
 			numbers.add(line.substring(start));
 		else
-			numbers.add(line.substring(start, endindex));
+			numbers.add(line.substring(start, start + offset -1));
 	}
 
 	public long solve(String s) {
-		List<Long> numbers2 = getNumbers();
-		Iterator<Long> inumbers = numbers2.iterator();
-		return doSolve(op, inumbers);
+		return doSolve(op, getNumbers().iterator());
 	}
 	
 	private List<Long> getNumbers() {

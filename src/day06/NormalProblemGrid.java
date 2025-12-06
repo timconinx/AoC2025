@@ -1,7 +1,6 @@
 package day06;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
@@ -16,16 +15,12 @@ public class NormalProblemGrid implements ProblemGrid {
 	}
 	
 	public void add(String line) {
-		Iterator<String> ilongs = Pattern.compile("\\d+")
+		List<String> longs = Pattern.compile("\\d+")
 				.matcher(line)
 				.results()
 				.map(MatchResult::group)
-				.iterator();
-		int i = 0;
-		while (ilongs.hasNext()) {
-			problems.get(i).add(ilongs.next());
-			i++;
-		}
+				.toList();
+		for (int i = 0; i < longs.size(); i++) problems.get(i).add(longs.get(i));
 	}
 	
 	public long solve(String line) {

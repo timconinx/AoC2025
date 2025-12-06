@@ -1,7 +1,6 @@
 package day06;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class NormalProblem extends Problem {
@@ -12,7 +11,6 @@ public class NormalProblem extends Problem {
 	}
 	
 	public long solve(String op) {
-		Iterator<Long> inumbers = numbers.iterator();
-		return doSolve(op, inumbers);
+		return doSolve(op, numbers.iterator());
 	}
 }
