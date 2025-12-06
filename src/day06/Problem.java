@@ -1,18 +1,11 @@
 package day06;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
-public class Problem {
-	private List<Long> numbers = new ArrayList<Long>();
-	
-	public void add(Long number) {
-		numbers.add(number);
-	}
-	
-	public long solve(String op) {
-		Iterator<Long> inumbers = numbers.iterator();
+public abstract class Problem {
+	public abstract void add(String s);
+	public abstract long solve(String s);
+	public long doSolve(String op, Iterator<Long> inumbers) {
 		Long result = 0L;
 		switch (op) {
 		case "+":

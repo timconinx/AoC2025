@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class CephProblem {
+public class CephProblem extends Problem {
 	private List<String> numbers;
 	
 	private int start;
@@ -28,21 +28,10 @@ public class CephProblem {
 			numbers.add(line.substring(start, endindex));
 	}
 
-	public long solve() {
-		Long result = 0L;
+	public long solve(String s) {
 		List<Long> numbers2 = getNumbers();
 		Iterator<Long> inumbers = numbers2.iterator();
-		switch (op) {
-		case "+":
-			while (inumbers.hasNext()) result += inumbers.next();
-			return result;
-		case "*":
-			result = 1L;
-			while (inumbers.hasNext()) result *= inumbers.next();
-			return result;
-		default:
-			throw new RuntimeException("invalid operator " + op);
-		}
+		return doSolve(op, inumbers);
 	}
 	
 	private List<Long> getNumbers() {

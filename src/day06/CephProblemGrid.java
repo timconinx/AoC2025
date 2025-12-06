@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CephProblemGrid {
+public class CephProblemGrid implements ProblemGrid {
 	private List<CephProblem> problems;
 	
 	public CephProblemGrid(String line) {
@@ -21,7 +21,7 @@ public class CephProblemGrid {
 	
 	public long solve(String line) {
 		Long sum = 0L;
-		for (int i = 0; i < problems.size(); i++) sum += problems.get(i).solve();
+		for (int i = 0; i < problems.size(); i++) sum += problems.get(i).solve(null);
 		return sum;
 	}
 }
